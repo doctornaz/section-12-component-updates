@@ -19,6 +19,7 @@ function App() {
     <div className="app">
       <h1>Hi there!</h1>
       <DemoOutput show={showParagraph}/>
+      {/* React.memo won't work for the button since the toggleParagraphHandler function is always re-created. It does the same thing but the "reference" always changes between re-evaluations, and therefore the props changed and the button will be re-evaluated.*/}
       <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
